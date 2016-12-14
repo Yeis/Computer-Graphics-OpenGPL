@@ -157,13 +157,16 @@ void keyboard(unsigned char key,int x,int y) {
 void specialKey(int key,int x,int y) {
 	switch(key) {
 	case 100: //left
-		Transform::left(amount,eye,up);
+		Transform::translate(10.0, 0.0, 0.0);
+		//Transform::left(amount,eye,up);
 		break;
 	case 101: //up
 		Transform::up(amount,eye,up);
 		break;
 	case 102: //right
-		Transform::left(-amount,eye,up);
+		eye = eye + Transform::translate(-10.0, 0.0, 0.0);
+
+		//Transform::left(-amount,eye,up);
 		break;
 	case 103: //down
 		Transform::up(-amount,eye,up);
